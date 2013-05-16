@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block side_menu %}
+<div class="page-header"><h1>Workflow</h1></div>
+<div class="sidebar-nav">
+	<ul class="nav nav-tabs nav-stacked affix">
+		<li><a href="#design" data-toggle="tab">1. Design Goal Sequence</a></li>
+		<li><a href="#primers" data-toggle="tab">2. Primer Design</a></li>
+		<li><a href="#pcr" data-toggle="tab">3. PCR Amplification</a></li>
+		<li><a href="#gel" data-toggle="tab">4. Gel Purification</a></li>
+		<li><a href="#assembly" data-toggle="tab">5. Isothermal Assembly</a></li>
+		<li><a href="#transformation" data-toggle="tab">6. Transformation</a></li>
+		<li><a href="#plasmid" data-toggle="tab">7. Plasmid Purification</a></li>
+		<li><a href="#verification" data-toggle="tab">8. Sequence Verification</a></li>
+	</ul>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="tab-content">
+	<div class="tab-pane active" id="design">
+	{% include 'workflow/design.html' %}
+	</div>
+	<div class="tab-pane" id="primers">
+	{% include 'workflow/primers.html' %}
+	</div>
+	<div class="tab-pane" id="pcr">
+	{% include 'workflow/pcr.html' %}
+	</div>
+	<div class="tab-pane" id="gel">
+	{% include 'workflow/gel.html' %}
+	</div>
+	<div class="tab-pane" id="assembly">
+	{% include 'workflow/assembly.html' %}
+	</div>
+	<div class="tab-pane" id="transformation">
+	{% include 'workflow/transformation.html' %}
+	</div>
+	<div class="tab-pane" id="plasmid">
+	{% include 'workflow/plasmid.html' %}
+	</div>
+	<div class="tab-pane" id="verification">
+	{% include 'workflow/verification.html' %}
+	</div>
+</div>
+{% endblock %}

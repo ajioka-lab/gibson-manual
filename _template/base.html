@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Gibson Isothermal Assembly</title>
+		<link href="./css/bootstrap.min.css" rel="stylesheet">
+		<style type="text/css">
+			body {
+				padding-top: 60px;
+				padding-bottom: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="#">Gibson Isothermal Assembly</a>
+					<ul class="nav">
+						<li{% if page is sameas 'index' %} class="active"{% endif %}><a href="./index.html">Summary</a></li>
+						<li{% if page is sameas 'workflow' %} class="active"{% endif %}><a href="./workflow.html">Workflow</a></li>
+						<li{% if page is sameas 'materials' %} class="active"{% endif %}><a href="./materials.html">Materials</a></li>
+						<li{% if page is sameas 'print' %} class="active"{% endif %}><a href="./print.html">Print</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								Download
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="./gibson-manual.zip">HTML</a></li>
+								<li><a href="./gibson-manual.pdf">PDF</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+				{% block side_menu %}{% endblock %}
+				</div>
+				<div class="span9">
+				{% block content %}{% endblock %}
+				</div>
+			</div>
+		</div>
+		<script src="./js/jquery-1.9.1.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+	</body>
+</html>

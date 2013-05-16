@@ -33,3 +33,11 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+*.swp
+
+_build/index.html
+_build/materials.html
+_build/workflow.html
+_build/print.html
+_build/gibson_manual.zip

@@ -1,0 +1,133 @@
+{% if page is sameas 'print' %}
+{% set h = 3 %}
+{% else %}
+{% set h = 1 %}
+{% endif %}
+
+<div class="page-header"><h{{h}}>PCR Amplification</h{{h}}></div>
+<p>Use a high fidelity DNA polymerase such as NEB Phusion&reg;.</p>
+<h{{h+3}}>Standard PCR Recipe</h{{h+3}}>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Component</th>
+			<th>Final Concentration</th>
+			<th>Volume per reaction (&mu;l)</th>
+			<th>Master Mix (&mu;l for 10 reactions)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Nuclease-free water</td>
+			<td></td>
+			<td>32.5</td>
+			<td>357.5</td>
+		</tr>
+		<tr>
+			<td>5X Phusion HF or GC Buffer</td>
+			<td>1X</td>
+			<td>10</td>
+			<td>110</td>
+		</tr>
+		<tr>
+			<td>10mM dNTPs</td>
+			<td>200 &mu;M</td>
+			<td>1</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>10 &mu;M Forward Primer</td>
+			<td>0.5 &mu;M</td>
+			<td>2.5</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>10 &mu;M Reverse Primer</td>
+			<td>0.5 &mu;M</td>
+			<td>2.5</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Template DNA</td>
+			<td>&lt; 250 ng</td>
+			<td>1</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>DMSO (optional)</td>
+			<td>3%</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Phusion DNA Polymerase</td>
+			<td>1.0 units/50 &mu;l PCR</td>
+			<td>0.5</td>
+			<td>5.5</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>Total</th>
+			<th></th>
+			<th>50</th>
+			<th>484</th>
+		</tr>
+	</tfoot>
+</table>
+<p>GC Buffer can be used as standard buffer.</p>
+<p>0.5X HF buffer yields more consistent results than 1X.</p>
+<h{{h+3}}>Standard PCR program</h{{h+3}}>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Step</th>
+			<th>Temperature</th>
+			<th>Time</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Denaturation</td>
+			<td>98&deg;C</td>
+			<td>30 s</td>
+		</tr>
+		<tr>
+			<td rowspan=3>30 cycles</td>
+			<td>98&deg;C</td>
+			<td>15 s</td>
+		</tr>
+		<tr>
+			<td>45-72&deg;C*</td>
+			<td>30 s</td>
+		</tr>
+		<tr>
+			<td>72&deg;C</td>
+			<td>45 s/kb</td>
+		</tr>
+		<tr>
+			<td>Final Extension</td>
+			<td>72&deg;C</td>
+			<td>8 minutes</td>
+		</tr>
+		<tr>
+			<td>Hold</td>
+			<td>4&deg;C</td>
+			<td> - </td>
+		</tr>
+	</tbody>
+</table>
+<p>*Annealing temperatures are typically 4&deg;C lower than lowest primer Tm</p>
+<div class="well">
+	<p>The following parameters can be adjusted to optimize PCR efficiency and specificity (see the NEB protocol for further details):<br />
+Annealing temperature<br />
+[Mg]<br />
+Polymerase concentration<br />
+GC buffer<br />
+DMSO<br /><br />
+
+[refs: NEB website https://www.neb.com/protocols/1/01/01/pcr-protocol-m0530]<br /><br />
+
+Primers stocks can be used at 100 mM in sterile ddH<sub>2</sub>O. <br />
+For more controlled conditions, primers may be resuspended in 10:1 TE buffer pH 8.0 (10mM Tris, 1 mM EDTA) </p>
+</div>
