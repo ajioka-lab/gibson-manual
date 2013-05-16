@@ -40,4 +40,5 @@ _build/index.html
 _build/materials.html
 _build/workflow.html
 _build/print.html
-_build/gibson-manual.zip
+*.zip
+*.pdf
