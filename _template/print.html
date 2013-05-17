@@ -7,73 +7,63 @@
 		<title>Gibson Isothermal Assembly</title>
 		<link href="./css/bootstrap.min.css" rel="stylesheet">
 		<style type="text/css">
-			body {
-				padding-top: 60px;
-				padding-bottom: 40px;
-			}
 			table {
 				page-break-inside:avoid;
 			}
 			.break {
 				page-break-after:always;
 			}
+			.well {
+				page-break-inside:avoid;
+			}
+			@page {
+				margin-top: 50px;
+				margin-left: 100px;
+				margin-bottom: 40px;
+				margin-right: 100px;
+				font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+				font-size:14px;
+				@bottom-center {
+					content: counter(page);
+					padding-bottom:40px;
+				}
+			}
 		</style>
 	</head>
 	<body>
-	<div class="container">
-		<div class="row break">
-			<div class="span7 offset1">
-				<div class="page-header"><h1>Gibson Isothermal Assembly</h1></div>
-				<div class="page-header"><h2>Summary</h2></div>
-				{% include 'index_content.html' %}
-			</div>
+		<div class="break">
+			<div class="page-header"><h1>Gibson Isothermal Assembly</h1></div>
+			<div class="page-header"><h2>Summary</h2></div>
+			{% include 'index_content.html' %}
 		</div>
-		<div class="row break">
-			<div class="span7 offset1">
-				<div class="page-header"><h2>Workflow</h2></div>
-				{% include 'workflow/design.html' %}
-			</div>
+		<div class="break">
+			<div class="page-header"><h2>Workflow</h2></div>
+			{% include 'workflow/design.html' %}
 		</div>
-		<div class="row break">
-			<div class="span7 offset1">
-				{% include 'workflow/primers.html' %}
-			</div>
+		<div class="break">
+			{% include 'workflow/primers.html' %}
 		</div>
-		<div class="row break">
-			<div class="span7 offset1">
-				{% include 'workflow/pcr.html' %}
-			</div>
+		<div class="break">
+			{% include 'workflow/pcr.html' %}
 		</div>
-		<div class="row break">
-			<div class="span7 offset1">
-				{% include 'workflow/gel.html' %}
-			</div>
+		<div class="break">
+			{% include 'workflow/gel.html' %}
 		</div>
-		<div class="row break">
-			<div class="span7 offset1">
-				{% include 'workflow/assembly.html' %}
-			</div>
+		<div class="break">
+			{% include 'workflow/assembly.html' %}
 		</div>
-		<div class="row break">
-			<div class="span7 offset1">
-				{% include 'workflow/transformation.html' %}
-			</div>
+		<div class="break">
+			{% include 'workflow/transformation.html' %}
 		</div>
-		<div class="row break">
-			<div class="span7 offset1">
-				{% include 'workflow/plasmid.html' %}
-			</div>
+		<div class="break">
+			{% include 'workflow/plasmid.html' %}
 		</div>
-		<div class="row break">
-			<div class="span7 offset1">
-				{% include 'workflow/verification.html' %}
-			</div>
+		<div class="break">
+			{% include 'workflow/verification.html' %}
 		</div>
-		<div class="row">
-			<div class="span7 offset1">
-				<div class="page-header"><h2>Materials</h2></div>
-				{% include 'materials_content.html' %}
-			</div>
+		<div>
+			<div class="page-header"><h2>Materials</h2></div>
+			{% include 'materials_content.html' %}
 		</div>
 	</div>
 	<script type="text/javascript">

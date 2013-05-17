@@ -8,7 +8,13 @@
 			body {
 				padding-top: 60px;
 				padding-bottom: 40px;
+				line-height:120%;
 			}
+			html {
+				overflow: -moz-scrollbars-vertical;
+				overflow-y:scroll;
+			}
+			
 		</style>
 	</head>
 	<body>
@@ -20,7 +26,7 @@
 						<li{% if page is sameas 'index' %} class="active"{% endif %}><a href="./index.html">Summary</a></li>
 						<li{% if page is sameas 'workflow' %} class="active"{% endif %}><a href="./workflow.html">Workflow</a></li>
 						<li{% if page is sameas 'materials' %} class="active"{% endif %}><a href="./materials.html">Materials</a></li>
-						<li{% if page is sameas 'print' %} class="active"{% endif %}><a href="./print.html">Print</a></li>
+						<li><a href="#" onClick="javascript:printManual();">Print</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								Download
@@ -44,7 +50,16 @@
 				</div>
 			</div>
 		</div>
+		<iframe id="printFrame" src="GibsonManual.pdf" style="display:none;"></iframe>
 		<script src="./js/jquery-1.9.1.min.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			function printManual()
+			{
+				var frame = $('iframe')[0];
+				frame.focus();
+				frame.contentWindow.print();
+			}
+		</script>
 	</body>
 </html>

@@ -37,4 +37,7 @@ zf.write( 'js/' )
 zf.write( 'js/bootstrap.min.js' )
 zf.write( 'js/jquery-1.9.1.min.js' )
 
-#HTML('print.html').write_pdf('GibsonManual.pdf')
+HTML('print.html').write_pdf('GibsonManual.pdf')
+
+zf.write( 'GibsonManual.pdf' )
+
