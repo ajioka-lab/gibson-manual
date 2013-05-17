@@ -40,13 +40,13 @@ for f in filelist:
 		fh.write( template.render(page=f) ) 
 		zf.write( f+'.html' )
 
-#zf.write( 'css/' )
-#zf.write( 'css/bootstrap.min.css' )
-#zf.write( 'js/' )
-#zf.write( 'js/bootstrap.min.js' )
-#zf.write( 'js/jquery-1.9.1.min.js' )
+zf.write( 'css/' )
+zf.write( 'css/bootstrap.min.css' )
+zf.write( 'js/' )
+zf.write( 'js/bootstrap.min.js' )
+zf.write( 'js/jquery-1.9.1.min.js' )
 
-#HTML('print.html').write_pdf('GibsonManual.pdf')
+HTML('print.html').write_pdf('GibsonManual.pdf')
 
-#zf.write( 'GibsonManual.pdf' )
+zf.write( 'GibsonManual.pdf' )
 
