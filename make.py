@@ -17,13 +17,9 @@ os.mkdir( '_build' )
 os.chdir( '_build' )
 
 os.mkdir( 'css' )
-os.mkdir( 'js' )
-os.mkdir( 'img' )
 
-shutil.copyfile( os.path.join(os.path.dirname(__file__), '../_template/js/bootstrap.min.js'), os.path.join(os.path.dirname(__file__),'js/bootstrap.min.js' ))
-shutil.copyfile( os.path.join(os.path.dirname(__file__), '../_template/js/jquery-1.9.1.min.js'), os.path.join(os.path.dirname(__file__),'js/jquery-1.9.1.min.js' ))
-shutil.copyfile( os.path.join(os.path.dirname(__file__), '../_template/img/glyphicons-halflings.png'), os.path.join(os.path.dirname(__file__),'img/glyphicons-halflings.png' ))
-shutil.copyfile( os.path.join(os.path.dirname(__file__), '../_template/img/glyphicons-halflings-white.png'), os.path.join(os.path.dirname(__file__),'img/glyphicons-halflings-white.png' ))
+shutil.copytree( os.path.join(os.path.dirname(__file__), '../_template/js/' ), os.path.join( os.path.dirname(__file__), 'js' ) )
+shutil.copytree( os.path.join(os.path.dirname(__file__), '../_template/img/' ), os.path.join( os.path.dirname(__file__), 'img' ) )
 
 templateLoader = FileSystemLoader( searchpath="../_template" )
 
