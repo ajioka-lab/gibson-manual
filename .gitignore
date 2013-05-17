@@ -36,4 +36,4 @@ nosetests.xml
 
 *.swp
 
-_build
+_build/*
