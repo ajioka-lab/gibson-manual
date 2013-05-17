@@ -3,13 +3,24 @@
 from jinja2 import FileSystemLoader, Environment
 import codecs 
 import zipfile
-import os
+import os, shutil
 from weasyprint import HTML, CSS
 
-from subprocess import Popen
+from subprocess import check_call
 import shlex
 
+
+shutil.rmtree( '_build' )
+
+os.mkdir( '_build' )
+
 os.chdir( '_build' )
+
+os.mkdir( 'css' )
+os.mkdir( 'js' )
+
+shutil.copyfile( os.path.join(os.path.dirname(__file__), '../_template/js/bootstrap.min.js'), os.path.join(os.path.dirname(__file__),'js/bootstrap.min.js' ))
+shutil.copyfile( os.path.join(os.path.dirname(__file__), '../_template/js/jquery-1.9.1.min.js'), os.path.join(os.path.dirname(__file__),'js/jquery-1.9.1.min.js' ))
 
 
 templateLoader = FileSystemLoader( searchpath="../_template" )
@@ -19,7 +30,7 @@ templateEnv = Environment( loader=templateLoader )
 filelist = ['index', 'materials', 'workflow', 'print']
 
 
-Popen( shlex.split('lessc -x --yui-compress ../_template/less/bootstrap.less css/bootstrap.min.css') )
+check_call( shlex.split('lessc ../_template/less/bootstrap.less css/bootstrap.min.css') )
 
 
 zf = zipfile.ZipFile( 'GibsonManual.zip', 'w' )

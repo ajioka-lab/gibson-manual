@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Gibson Isothermal Assembly</title>
+		<link href="./css/bootstrap.css" rel="stylesheet">
+		<link href="./css/bootstrap-responsive.css" rel="stylesheet">
 		<link href="./css/bootstrap.min.css" rel="stylesheet">
 		<style type="text/css">
 			body {
@@ -10,33 +13,55 @@
 				padding-bottom: 40px;
 				line-height:120%;
 			}
+			@media screen and (max-width: 979px) {
+				body { padding-top: 0px; }
+			}
 			html {
 				overflow: -moz-scrollbars-vertical;
 				overflow-y:scroll;
 			}
-			
+			div.sidebar-nav {
+				 padding-top:7em;
+			}
+			@media (max-width: 767px) {
+			  div.span3 .affix {
+				position: static;
+				width: auto;
+				top: 0;
+			  }
+			  div.sidebar-nav {
+			  	padding-top:0px;
+			  }
+			}
 		</style>
 	</head>
 	<body>
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".main-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
 					<a class="brand" href="#">Gibson Isothermal Assembly</a>
-					<ul class="nav">
-						<li{% if page is sameas 'index' %} class="active"{% endif %}><a href="./index.html">Summary</a></li>
-						<li{% if page is sameas 'workflow' %} class="active"{% endif %}><a href="./workflow.html">Workflow</a></li>
-						<li{% if page is sameas 'materials' %} class="active"{% endif %}><a href="./materials.html">Materials</a></li>
-						<li><a href="#" onClick="javascript:printManual();">Print</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								Download
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="./GibsonManual.zip">HTML</a></li>
-								<li><a href="./GibsonManual.pdf">PDF</a></li>
-							</ul>
-						</li>
-					</ul>
+					<div class="main-collapse nav-collapse collapse">
+						<ul class="nav">
+							<li{% if page is sameas 'index' %} class="active"{% endif %}><a href="./index.html">Summary</a></li>
+							<li{% if page is sameas 'workflow' %} class="active"{% endif %}><a href="./workflow.html">Workflow</a></li>
+							<li{% if page is sameas 'materials' %} class="active"{% endif %}><a href="./materials.html">Materials</a></li>
+							<li><a href="#" onClick="javascript:printManual();">Print</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Download
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="./GibsonManual.zip">HTML</a></li>
+									<li><a href="./GibsonManual.pdf">PDF</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>

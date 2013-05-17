@@ -36,9 +36,4 @@ nosetests.xml
 
 *.swp
 
-_build/index.html
-_build/materials.html
-_build/workflow.html
-_build/print.html
-*.zip
-*.pdf
+_build
