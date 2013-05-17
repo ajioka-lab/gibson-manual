@@ -18,10 +18,12 @@ os.chdir( '_build' )
 
 os.mkdir( 'css' )
 os.mkdir( 'js' )
+os.mkdir( 'img' )
 
 shutil.copyfile( os.path.join(os.path.dirname(__file__), '../_template/js/bootstrap.min.js'), os.path.join(os.path.dirname(__file__),'js/bootstrap.min.js' ))
 shutil.copyfile( os.path.join(os.path.dirname(__file__), '../_template/js/jquery-1.9.1.min.js'), os.path.join(os.path.dirname(__file__),'js/jquery-1.9.1.min.js' ))
-
+shutil.copyfile( os.path.join(os.path.dirname(__file__), '../_template/img/glyphicons-halflings.png'), os.path.join(os.path.dirname(__file__),'img/glyphicons-halflings.png' ))
+shutil.copyfile( os.path.join(os.path.dirname(__file__), '../_template/img/glyphicons-halflings-white.png'), os.path.join(os.path.dirname(__file__),'img/glyphicons-halflings-white.png' ))
 
 templateLoader = FileSystemLoader( searchpath="../_template" )
 
@@ -42,13 +44,13 @@ for f in filelist:
 		fh.write( template.render(page=f) ) 
 		zf.write( f+'.html' )
 
-zf.write( 'css/' )
-zf.write( 'css/bootstrap.min.css' )
-zf.write( 'js/' )
-zf.write( 'js/bootstrap.min.js' )
-zf.write( 'js/jquery-1.9.1.min.js' )
+#zf.write( 'css/' )
+#zf.write( 'css/bootstrap.min.css' )
+#zf.write( 'js/' )
+#zf.write( 'js/bootstrap.min.js' )
+#zf.write( 'js/jquery-1.9.1.min.js' )
 
-HTML('print.html').write_pdf('GibsonManual.pdf')
+#HTML('print.html').write_pdf('GibsonManual.pdf')
 
-zf.write( 'GibsonManual.pdf' )
+#zf.write( 'GibsonManual.pdf' )
 
