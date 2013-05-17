@@ -30,7 +30,7 @@ templateEnv = Environment( loader=templateLoader )
 filelist = ['index', 'materials', 'workflow', 'print']
 
 
-check_call( shlex.split('lessc ../_template/less/bootstrap.less css/bootstrap.min.css') )
+check_call( shlex.split('lessc -x --yui-compress ../_template/less/bootstrap.less css/bootstrap.min.css') )
 
 
 zf = zipfile.ZipFile( 'GibsonManual.zip', 'w' )
