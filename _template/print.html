@@ -7,45 +7,9 @@
 		<title>Gibson Isothermal Assembly</title>
 		<link href="./css/bootstrap.min.css" rel="stylesheet">
 		<style type="text/css">
-			table {
-				page-break-inside:avoid;
-			}
-			.break {
-				page-break-after:always;
-			}
-			.well {
-				page-break-inside:avoid;
-			}
 			@page {
-				margin-top: 50px;
-				margin-left: 100px;
-				margin-bottom: 40px;
-				margin-right: 100px;
-				font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-				font-size:14px;
-				@bottom-center {
-					content: counter(page);
-					padding-bottom:40px;
-				}
-				@top-right {
-					content: 'Gibson Isothermal Assembly';
-					font-size:16px;
-					font-weight:bolder;
-					color:green;
-					padding-top:20px;
-				}
 				@bottom-right {
 					content: 'Version {{ version }}';
-					font-size:0.7em;
-				}
-				border-top: 2px solid gray;
-			}
-			@media print {
-				.noprint {
-					display:none;
-				}
-				.collapse {
-					height:auto !important;
 				}
 			}
 		</style>

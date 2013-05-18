@@ -1,0 +1,41 @@
+table {
+	page-break-inside:avoid;
+}
+.break {
+	page-break-after:always;
+}
+.well {
+	page-break-inside:avoid;
+}
+@page {
+	margin-top: 50px;
+	margin-left: 100px;
+	margin-bottom: 40px;
+	margin-right: 100px;
+	font-family:@baseFontFamily;
+	font-size:@baseFontSize;
+	@bottom-center {
+		content: counter(page);
+		padding-bottom:40px;
+	}
+	@top-right {
+		content: 'Gibson Isothermal Assembly';
+		font-weight:bolder;
+		color:@headingsColor;
+		padding-top:20px;
+	}
+	@bottom-right {
+		content: 'Version {{ version }}';
+		font-size:0.7em;
+		color:@grayLight;
+	}
+	border-top: 2px solid @headingsColor;
+}
+@media print {
+	.noprint {
+		display:none;
+	}
+	.collapse {
+		height:auto !important;
+	}
+}
