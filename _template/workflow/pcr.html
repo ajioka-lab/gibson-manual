@@ -4,9 +4,12 @@
 {% set h = 1 %}
 {% endif %}
 
+{% import "macros.html" as macros %}
+
 <div class="page-header"><h{{h}}>PCR Amplification</h{{h}}></div>
 <p>Use a high fidelity DNA polymerase such as NEB Phusion&reg;.</p>
 <h{{h+3}}>Standard PCR Recipe</h{{h+3}}>
+{% call macros.collapse_table( 'pcr_recipe' ) %}
 <table class="table table-bordered">
 	<thead>
 		<tr>
@@ -75,10 +78,12 @@
 		</tr>
 	</tfoot>
 </table>
+{% endcall %}
 <p>GC Buffer can be used as standard buffer.</p>
 <p>0.5X HF buffer yields more consistent results than 1X.</p>
 <h{{h+3}}>Standard PCR program</h{{h+3}}>
-<table class="table table-bordered">
+{% call macros.collapse_table( 'pcr_protocol' ) %}
+<table class="table table-bordered" id="woo">
 	<thead>
 		<tr>
 			<th>Step</th>
@@ -98,11 +103,11 @@
 			<td>15 s</td>
 		</tr>
 		<tr>
-			<td>45-72&deg;C*</td>
+			<td class="border-fix">45-72&deg;C*</td>
 			<td>30 s</td>
 		</tr>
 		<tr>
-			<td>72&deg;C</td>
+			<td class="border-fix">72&deg;C</td>
 			<td>45 s/kb</td>
 		</tr>
 		<tr>
@@ -117,8 +122,9 @@
 		</tr>
 	</tbody>
 </table>
+{%endcall %}
 <p>*Annealing temperatures are typically 4&deg;C lower than lowest primer Tm</p>
-<div class="well">
+{% call macros.notes('pcr') %}
 	<p>The following parameters can be adjusted to optimize PCR efficiency and specificity (see the <a href="https://www.neb.com/protocols/1/01/01/pcr-protocol-m0530">NEB protocol</a> for further details):<br />
 Annealing temperature<br />
 [Mg]<br />
@@ -128,4 +134,4 @@ DMSO<br /><br />
 
 Primers stocks can be used at 100 mM in sterile ddH<sub>2</sub>O. <br />
 For more controlled conditions, primers may be resuspended in 10:1 TE buffer pH 8.0 (10mM Tris, 1 mM EDTA) </p>
-</div>
+{% endcall %}

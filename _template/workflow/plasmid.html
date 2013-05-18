@@ -4,6 +4,8 @@
 {% set h = 1 %}
 {% endif %}
 
+{% import "macros.html" as macros %}
+
 <div class="page-header"><h{{h}}>Plasmid Purification</h{{h}}></div>
 
 <p>Commercial kits for plasmid isolation are quick and easy to use, e.g. Qiagen Qiaprep Spin Mini Kit.</p>
@@ -32,7 +34,7 @@ RPM for 1 min and discard the flow-through.</strong></li>
 the column, let stand for 1 min and centrifuge at 13000 RPM for 1 min.</strong>For increased DNA concentration, use 30-36 &mu;l of the Buffer EB or ddH<sub>2</sub>O and let the column stand for 1-3 min before centrifugation.</li>
 </ol>
 
-<div class="well">
+{% call macros.notes('purification') %}
 	<p>Plasmid DNA can be further concentrated by ethanol precipitation</p>
 	<ol>
 		<li>add 1/10 volume of sodium acetate, pH 5.2 and mix</li>
@@ -44,4 +46,4 @@ the column, let stand for 1 min and centrifuge at 13000 RPM for 1 min.</strong>F
 		<li>centrifuge at 13000RPM for 1 min</li>
 		<li>dry and resuspend pellet in the appropriate volume of ddH<sub>2</sub>O or TE buffer</li>
 	</ol>
-</div>
+{% endcall %}

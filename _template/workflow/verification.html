@@ -4,6 +4,8 @@
 {% set h = 1 %}
 {% endif %}
 
+{% import "macros.html" as macros %}
+
 <div class="page-header"><h{{h}}>Sequence Verification</h{{h}}></div>
 
 <p>Several companies provide sequencing services (e.g. Source BioScience). Follow the instructions on the webpage of the particular company for detailed instructions on how to prepare and ship your samples for sequencing. Brief instructions for sequencing services of Source BioScience are as follows:</p>
@@ -16,7 +18,7 @@
 	<li><strong>Ship your samples according to instructions on the Source BioScience website.</strong></li>
 </ol>
 
-<div class="well">
+{% call macros.notes('sequencing') %}
 	<ul>
 		<li>Some companies such as Source BioScience provide sequencing primers for a
 number of standard vectors. Check the website for the selection of available
@@ -26,4 +28,4 @@ primers.</li>
 		<li>Sequencing files sent by the company can be compared by a number of
 software packages, such as web-based <a href="http://www.ebi.ac.uk/Tools/msa/clustalw2/">ClustalW</a></li>
 	</ul>
-</div>
+{% endcall %}
