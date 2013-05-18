@@ -4,15 +4,12 @@
 {% set h = 1 %}
 {% endif %}
 
-{% macro noprint( text ) -%}
-	{% if page is sameas 'print' %}{% else %}{{ text }}{% endif %}
-{%- endmacro %}
 
 <div class="page-header"><h{{h}}>Isothermal Assembly</h{{h}}></div>
 <h{{h+3}}>Preparation</h{{h+3}}>
 <ol>
-	<li>{{ noprint('<button class="btn btn-primary btn-small" style="float:right;" data-toggle="collapse" data-target="#ISO">Detail</button>') }}<h5>5X ISO Buffer</h5>
-	<div id="ISO"{{ noprint(' class="collapse"') }}>
+	<li><button class="btn btn-primary btn-small noprint" style="float:right;" data-toggle="collapse" data-target="#ISO">Detail</button><strong>5X ISO Buffer</strong>
+	<div id="ISO" class="collapse">
 		<table class="table table-bordered">
 			<thead>
 				<tr>
@@ -90,8 +87,8 @@
 		</div>
 	</div>
 	</li>
-	<li>{{ noprint('<button class="btn btn-primary btn-small" style="float:right;" data-toggle="collapse" data-target="#MM">Detail</button>') }}<h5>1.33X Assembly Master Mix</h5>
-	<div id="MM"{{ noprint(' class="collapse"') }}> 
+	<li><button class="btn btn-primary btn-small noprint" style="float:right;" data-toggle="collapse" data-target="#MM">Detail</button><strong>1.33X Assembly Master Mix</strong>
+	<div id="MM" class="collapse"> 
 		<table class="table table-bordered"> 
 			<thead>
 				<tr> 
@@ -143,13 +140,13 @@
 		</table>
 		<p>*Optimised for 20-150 bp sequence homology overlaps.</p>
 	</div></li>
-	<li><h5>Measure the DNA concentration (ng/&mu;l) of each assembly piece (optional)</h5></li>
+	<li><strong>Measure the DNA concentration (ng/&mu;l) of each assembly piece (optional)</strong></li>
 </ol>		
 <h{{h+3}}>Assembly</h{{h+3}}>
 <ol> 
 	<li>Thaw 4 &mu;l aliquot of Assembly Master Mix (AMM), keep on ice.</li>
-	<li>{{ noprint('<button class="btn btn-info btn-small" style="float:right;" data-toggle="collapse" data-target="#notes-concentration">Notes</button>') }}Add assembly fragments to AMM to a final volume of 5.2 &mu;l, e.g. 0.3 &mu;l vector, 0.9 &mu;l insert
-	<div{{ noprint(' class="collapse"') }} id="notes-concentration"> 
+	<li><button class="btn btn-info btn-small noprint" style="float:right;" data-toggle="collapse" data-target="#notes-concentration">Notes</button>Add assembly fragments to AMM to a final volume of 5.2 &mu;l, e.g. 0.3 &mu;l vector, 0.9 &mu;l insert
+	<div class="collapse" id="notes-concentration"> 
 		<div class="well"><p>The above rule of thumb is reliable; however, for more controlled conditions the concentrations of DNA fragments can be measured and combined as follows.</p>
 		<p>10-100 ng vector + X ng insert, where X equals:</p>										
 		<ul> 
@@ -159,8 +156,8 @@
 		</ul></div>
 	</div></li>
 	<li>Incubate the assembly reaction at 50 &deg;C for 60 minutes then place on ice.</li>
-	<li>{{ noprint('<button class="btn btn-info btn-small" style="float:right;" data-toggle="collapse" data-target="#notes-efficiency">Notes</button>') }}Transform Assembly Reaction into competent <i>Escherichia coli</i>, e.g. 5.2 &mu;l Assembly Reaction to 100 &mu;l competent cells.		
-	<div{{ noprint(' class="collapse"') }} id="notes-efficiency">
+	<li><button class="btn btn-info btn-small noprint" style="float:right;" data-toggle="collapse" data-target="#notes-efficiency">Notes</button>Transform Assembly Reaction into competent <i>Escherichia coli</i>, e.g. 5.2 &mu;l Assembly Reaction to 100 &mu;l competent cells.		
+	<div class="collapse" id="notes-efficiency">
 		<div class="well"><p>The following factors have a significant impact in the efficiency of assembly.</p>
 		<ul>
 			<li>Ratio of purified DNA to Assembly Master Mix
