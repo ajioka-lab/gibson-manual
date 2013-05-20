@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div id="wrap">
-			<div class="navbar navbar-fixed-top">
+			<div class="navbar navbar-inverse navbar-fixed-top">
 				<div class="navbar-inner">
 					<div class="container">
 						<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".main-collapse">
@@ -16,13 +16,13 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="brand" href="./">Gibson Isothermal Assembly</a>
 						<div class="main-collapse nav-collapse collapse">
 							<ul class="nav">
 								<li{% if page is sameas 'index' %} class="active"{% endif %}><a href="./index.html">Summary</a></li>
 								<li{% if page is sameas 'workflow' %} class="active"{% endif %}><a href="./workflow.html">Workflow</a></li>
 								<li{% if page is sameas 'materials' %} class="active"{% endif %}><a href="./materials.html">Materials</a></li>
-								<li><a href="#" onClick="javascript:printManual();">Print</a></li>
+								<li class="divider-vertical"></li>
+								<li><a href="#" onClick="javascript:printManual();"><i class="icon-print"></i> Print</a></li>
 								{#<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 										Download
@@ -32,27 +32,23 @@
 										<li><a href="./GibsonManual.pdf">PDF</a></li>
 									</ul>
 								</li>#}
-								<li><a href="./GibsonManual.pdf">Download PDF</a></li>
+								<li><a href="./GibsonManual.pdf"><i class="icon-file"></i> Download PDF</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="container">
+			{% block hero %}{% endblock %}
+			<div class="container main-content">
 				<div class="row">
-					<div class="span3">
-					{% block side_menu %}{% endblock %}
-					</div>
-					<div class="span9">
 					{% block content %}{% endblock %}
-					</div>
 				</div>
 			</div>
 			<div id="push"></div>
 		</div>
 		<div id="footer">
 			<div class="container">
-				<p class="muted">Version {{ version }}. <a href="mailto:someone@somewhere.ac.uk">Contact</a>. Content something someone.</p>
+				<p class="muted">Version {{ version }}. <a href="mailto:ja131@cam.ac.uk">Contact</a>. &copy;2013 Ajioka Lab.</p>
 			</div>
 		</div>
 		<iframe id="printFrame" src="GibsonManual.pdf" style="display:none;"></iframe>

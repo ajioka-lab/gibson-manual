@@ -4,11 +4,7 @@
 {% set h = 1 %}
 {% endif %}
 
-<div class="page-header"><h{{h}}>The scope of this manual</h{{h}}></div>
-
-This manual is intended primarily for users with graduate-level knowledge of molecular biology. It introduces users to the principles of Gibson Isothermal Assembly and its application, as well as providing guidance on implementing an efficient workflow and on troubleshooting. The focus is on primer design and the assembly reaction, but also includes descriptions of other steps in a typical Gibson Isothermal Assembly in order to giving the reader an overview of a complete workflow.
-
-<h{{h+1}}>Summary</h{{h+1}}>
+<div class="page-header"><h{{h+2}}>Summary</h{{h+2}}></div>
 Gibson Isothermal Assembly is a method of assembling multiple DNA sequences during a 1 hour incubation in a single reaction volume [<a href="http://www.synbio.org.uk/gibson/resources/Gibson2009_nmeth.1318.pdf">Gibson et al. 2009</a>]. 
 
 <h{{h+3}}>Benefits</h{{h+3}}>
@@ -24,6 +20,12 @@ Gibson Isothermal Assembly is a method of assembling multiple DNA sequences duri
 	<li>Rearrangements are possible where there are regions of homology close to the termini of substrate sequences, which can compete with intended assembly reactions.</li>
 	<li>Substrate DNA sequences with high Tm secondary structures may assemble with low efficiency.</li>
 </ul>
+
+
+<h{{h+2}}>The scope of this manual</h{{h+2}}>
+
+This manual is intended primarily for users with graduate-level knowledge of molecular biology. It introduces users to the principles of Gibson Isothermal Assembly and its application, as well as providing guidance on implementing an efficient workflow and on troubleshooting. The focus is on primer design and the assembly reaction, but also includes descriptions of other steps in a typical Gibson Isothermal Assembly in order to giving the reader an overview of a complete workflow.
+
 
 <h{{h+1}}>The Gibson Assembly Reaction</h{{h+1}}>
 <p>Terminal regions of ~40 bp homologous sequence determine the order in which substrate sequences are assembled. Substrate DNA sequences are added to a reaction volume containing the enzymes i) T5 exonuclease, ii) Phusion High Fidelity DNA polymerase&reg; and iii) Taq DNA ligase. The reaction is incubated for 1 hour at 50&deg;C.</p>

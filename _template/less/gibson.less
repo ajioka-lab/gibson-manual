@@ -6,12 +6,33 @@ ul.flowchart>li.list-arrow {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	font-size:1.3em;
 }
 ul.flowchart>li>a {
 	-moz-border-radius: 15px !important;
 	border-radius: 15px !important;
 }
+
+li.active .btn-flowchart {
+	background-image: none;
+    outline: 0;
+    .box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
+}
+
+header {
+	background: #1e776d;
+	background: -moz-linear-gradient(45deg, #1e776d 0%, #5DCFC3 100%);
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#1e776d), color-stop(100%,#5DCFC3));
+	background: -webkit-linear-gradient(45deg, #1e776d 0%,#5DCFC3 100%);
+	background: -o-linear-gradient(45deg, #1e776d 0%,#5DCFC3 100%);
+	background: -ms-linear-gradient(45deg, #1e776d 0%,#5DCFC3 100%);
+	background: linear-gradient(45deg, #1e776d 0%, #5DCFC3 100%);
+}
+
+.flowchart > li > a {
+	display:block;
+	text-align:left;
+}
+
 
 div.sidebar-nav {
 	 padding-top:7em;
@@ -28,6 +49,20 @@ div.span9 ol,ul {
   div.sidebar-nav {
 	padding-top:0px;
   }
+  header {
+  	font-size:0.7em;
+  }
+}
+
+@media (max-width:979px) {
+	header {
+		top:-20px !important;
+		font-size:0.8em;
+	}
+}
+
+.accordion-heading a.accordion-toggle {
+	background-color:#eee;
 }
 
 div.accordion-table {
@@ -49,4 +84,8 @@ div.accordion-table table tr td:first-child:not(.border-fix), div.accordion-tabl
 
 ol.summary_list li {
 	padding-bottom:2em;
+}
+
+div.navbar li.active a {
+	background-color:@btnPrimaryBackground !important;
 }

@@ -1,11 +1,8 @@
 {% extends 'base.html' %}
 
-{% block side_menu %}
-<div style="margin: 20px 0 30px;">
-	<h1>Materials</h1>
-</div>
-{% endblock %}
-
 {% block content %}
-{% include 'materials_content.html' %}
+<div class="span9 offset1">
+	<div class="page-header"><h1>Materials</h1></div>
+	{% include 'materials_content.html' %}
+</div>
 {% endblock %}

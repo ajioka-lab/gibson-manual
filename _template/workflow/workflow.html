@@ -1,0 +1,13 @@
+{% if page is sameas 'print' %}
+{% set h = 3 %}
+{% else %}
+{% set h = 1 %}
+{% endif %}
+
+{% import 'macros.html' as macros %}
+
+<div class="page-header"><h{{ h }}>Overview</h{{ h }}></div>
+
+<p>This is a description of a typical DNA assembly workflow from designing goal sequences through to sequence verification. Navigate the workflow using the buttons in the flow diagram on the left.</p>
+
+<p>The whole workflow is available as a download <a href="./GibsonManual.pdf">here</a>.</p>

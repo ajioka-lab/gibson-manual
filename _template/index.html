@@ -1,12 +1,25 @@
 {% extends 'base.html' %}
 
-{% block side_menu %}
-<div style="margin: 20px 0 30px;">
-	<h1 class="hidden-tablet">Gibson Isothermal Assembly</h1>
-	<h2 class="visible-tablet">Gibson Isothermal Assembly</h2>
-</div>
+{% block hero %}
+{#<header style="position:relative; background:linear-gradient(45deg, #03C 20%, #85e2ff 100%); top:40px; padding:40px;"> #}
+<header style="position:relative; top:40px; padding:40px;">
+<div class="container">
+	<div class="row">
+		<div class="span8 offset1" style="color:black;">
+			<h1 style="color:white; font-size:5em;">Gibson Assembly</h1>
+			<h4 style="color:white; padding-left:3em; font-size:1.5em; padding-top:0.3em;">Fast, flexible and cost-effective DNA assembly</h4>
+		</div>
+		<div class="span3">
+			{#<a href="./workflow.html" class="btn btn-primary" style="width:130px;">Protocols</a><br><br>
+			<a href="./materials.html" class="btn btn-primary" style="width:130px;">List of Materials</a>#}
+		</div>
+	</div>
+</header>
 {% endblock %}
 
+
 {% block content %}
+<div class="span9 offset1">
 {% include 'index_content.html' %}
+</div>
 {% endblock %}

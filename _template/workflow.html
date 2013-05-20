@@ -1,53 +1,63 @@
 {% extends 'base.html' %}
 
-{% block side_menu %}
-<div style="margin: 20px 0 30px;" class="affix"><h1 style="margin-top:0px;">Workflow</h1></div>
-<div class="sidebar-nav">
-	<ul class="nav nav-tabs nav-stacked affix flowchart">
-		<li class="active"><a href="#design" data-toggle="tab">1. Design Goal Sequence</a></li>
-		<li class="list-arrow">&darr;</li>
-		<li><a href="#primers" data-toggle="tab">2. Primer Design</a></li>
-		<li class="list-arrow">&darr;</li>
-		<li><a href="#pcr" data-toggle="tab">3. PCR Amplification</a></li>
-		<li class="list-arrow">&darr;</li>
-		<li><a href="#gel" data-toggle="tab">4. Gel Purification</a></li>
-		<li class="list-arrow">&darr;</li>
-		<li><a href="#assembly" data-toggle="tab">5. Isothermal Assembly</a></li>
-		<li class="list-arrow">&darr;</li>
-		<li><a href="#transformation" data-toggle="tab">6. Transformation</a></li>
-		<li class="list-arrow">&darr;</li>
-		<li><a href="#plasmid" data-toggle="tab">7. Plasmid Purification</a></li>
-		<li class="list-arrow">&darr;</li>
-		<li><a href="#verification" data-toggle="tab">8. Sequence Verification</a></li>
-	</ul>
-</div>
-{% endblock %}
+
+
+
 
 {% block content %}
-<div class="tab-content">
-	<div class="tab-pane active" id="design">
-	{% include 'workflow/design.html' %}
+<div class="span3">
+	<div style="margin: 20px 0 30px;" class="affix"><h1 style="margin-top:0px;">Workflow</h1></div>
+	<div class="sidebar-nav">
+		<ul class="nav-list nav-stacked affix flowchart" style="list-style:none; margin-left:0;">
+			<li class="active"><a class="btn btn-flowchart" href="#workflow" data-toggle="tab" style="text-align:center"><strong>Overview</strong></a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>			
+			<li><a class="btn btn-flowchart" href="#design" data-toggle="tab"><strong>1</strong>&nbsp;&nbsp;&nbsp;Design Goal Sequence</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#primers" data-toggle="tab"><strong>2</strong>&nbsp;&nbsp;&nbsp;Primer Design</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#pcr" data-toggle="tab"><strong>3</strong>&nbsp;&nbsp;&nbsp;PCR Amplification</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#gel" data-toggle="tab"><strong>4</strong>&nbsp;&nbsp;&nbsp;Gel Purification</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#assembly" data-toggle="tab"><strong>5</strong>&nbsp;&nbsp;&nbsp;Isothermal Assembly</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#transformation" data-toggle="tab"><strong>6</strong>&nbsp;&nbsp;&nbsp;Transformation</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#plasmid" data-toggle="tab"><strong>7</strong>&nbsp;&nbsp;&nbsp;Plasmid Purification</a></li>
+			<li class="list-arrow"><i class="icon-arrow-down"></i></li>
+			<li><a class="btn btn-flowchart" href="#verification" data-toggle="tab"><strong>8</strong>&nbsp;&nbsp;&nbsp;Sequence Verification</a></li>
+		</ul>
 	</div>
-	<div class="tab-pane" id="primers">
-	{% include 'workflow/primers.html' %}
-	</div>
-	<div class="tab-pane" id="pcr">
-	{% include 'workflow/pcr.html' %}
-	</div>
-	<div class="tab-pane" id="gel">
-	{% include 'workflow/gel.html' %}
-	</div>
-	<div class="tab-pane" id="assembly">
-	{% include 'workflow/assembly.html' %}
-	</div>
-	<div class="tab-pane" id="transformation">
-	{% include 'workflow/transformation.html' %}
-	</div>
-	<div class="tab-pane" id="plasmid">
-	{% include 'workflow/plasmid.html' %}
-	</div>
-	<div class="tab-pane" id="verification">
-	{% include 'workflow/verification.html' %}
+</div>
+<div class="span9">
+	<div class="tab-content">
+		<div class="tab-pane active" id="workflow">
+		{% include 'workflow/workflow.html' %}
+		</div>
+		<div class="tab-pane" id="design">
+		{% include 'workflow/design.html' %}
+		</div>
+		<div class="tab-pane" id="primers">
+		{% include 'workflow/primers.html' %}
+		</div>
+		<div class="tab-pane" id="pcr">
+		{% include 'workflow/pcr.html' %}
+		</div>
+		<div class="tab-pane" id="gel">
+		{% include 'workflow/gel.html' %}
+		</div>
+		<div class="tab-pane" id="assembly">
+		{% include 'workflow/assembly.html' %}
+		</div>
+		<div class="tab-pane" id="transformation">
+		{% include 'workflow/transformation.html' %}
+		</div>
+		<div class="tab-pane" id="plasmid">
+		{% include 'workflow/plasmid.html' %}
+		</div>
+		<div class="tab-pane" id="verification">
+		{% include 'workflow/verification.html' %}
+		</div>
 	</div>
 </div>
 {% endblock %}
