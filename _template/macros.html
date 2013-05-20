@@ -1,7 +1,7 @@
 {% macro collapse_table(name, text='Protocol') -%}
 <div class="accordion" id="{{ name }}_protocol_accordion" style="margin-bottom:10px;">
 	<div class="accordion-group">
-		<div class="accordion-heading warning">
+		<div class="accordion-heading">
 			<a class="accordion-toggle" data-toggle="collapse" data-parent="#{{ name }}_protocol_accordion" href="#{{ name }}_protocol"><i class="icon icon-chevron-down"></i><strong>{{ text }}</strong></a>
 		</div>
 		<div id="{{ name }}_protocol" class="accordion-body collapse">
@@ -16,11 +16,26 @@
 {% macro notes(name, text='Notes') -%}
 <div class="accordion" id="{{ name }}_notes_accordion" style="margin-bottom:10px;">
 	<div class="accordion-group">
-		<div class="accordion-heading warning">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#{{ name }}_notes_accordion" href="#{{ name }}_notes"><i class="icon icon-chevron-down"></i><strong>Notes</strong></a>
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#{{ name }}_notes_accordion" href="#{{ name }}_notes"><i class="icon icon-chevron-down"></i><strong>{{ text }}</strong></a>
 		</div>
 		<div id="{{ name }}_notes" class="accordion-body collapse">
 			<div class="accordion-inner note">
+				{{ caller() }}
+			</div>
+		</div>
+	</div>
+</div>
+{%- endmacro %}
+
+{% macro screenshot(name, text='Screenshot') -%}
+<div class="accordion" id="{{ name }}_screenshot_accordion" style="margin-bottom:10px;">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#{{ name }}_screenshot_accordion" href="#{{ name }}_screenshot"><i class="icon icon-chevron-down"></i><strong>{{ text }}</strong></a>
+		</div>
+		<div id="{{ name }}_screenshot" class="accordion-body collapse">
+			<div class="accordion-inner">
 				{{ caller() }}
 			</div>
 		</div>

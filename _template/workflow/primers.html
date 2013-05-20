@@ -4,6 +4,8 @@
 {% set h = 1 %}
 {% endif %}
 
+{% import 'macros.html' as macros %}
+
 <div class="page-header"><h{{ h }}>Design Primers</h{{ h }}></div>
 
 <p>40 bp of overlap is sufficient for the Gibson assembly reaction. 
@@ -17,3 +19,26 @@ Thus is typically achieved using 20 bp for qeuence for the terminal sequences of
 <p>Join these two sequences and check for single stranded DNA secondary structure using a program like Unafold or MFold (http://mfold.bioinfo.rpi.edu/). Inevitably there will be some stem-loop structures but what matters is that they are not stable (e.g. negative ΔG) and try to avoid strong structure at the 3&prime; end as this is where the primer must anneal for the PCR. The primer design may have to go through a few iterations in extending or shortening the sequence at either end to achieve a good theoretical primer. The complementary sequence may be a good starting point for the fragment A primer to generate the overlap with fragment B.</p>
 <p>NB: Check the reverse complement of the sequence from Step 3 as it will be a good starting point for the fragment A PCR primer that will generate an overlap with fragment B.</p>
 <h{{ h+1 }}>Gibthon Primer Design</h{{ h+1 }}>
+
+<p>Having designed your construct in the <a href="http://www.gibthon.org">Gibthon Construct Designer</a>, you will be able to automatically generate and design primers.</p>
+<p>The primer design engine used by Gibthon scores primers on the following metrics:</p>
+<ul>
+	<li>Melting temperature</li>
+	<li>Mis-priming</li>
+	<li>Self-priming</li>
+	<li>Secondary structures</li>
+	<li>Primer dimers</li>
+	<li>Unique regions of homology</li>
+</ul>
+<p>You will then be presented with an overview of the generated primers, along with the option to either fix manually or attempt to automatically fix any detected issues.</p>
+
+{% call macros.screenshot( name='Gibthon2' ) %}
+<img src="./img/Gibthon2.png" alt="Automatically designed primers.">
+{% endcall %}
+
+<p>At the end of the process you will be given a datasheet for each primer, as well as protocols tailored to the specifications of the primers.</p>
+
+{% call macros.screenshot( name='Gibthon3' ) %}
+<img src="./img/Gibthon3.png" alt="Example primer datasheet">
+{% endcall %}
+	

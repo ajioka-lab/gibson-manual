@@ -4,8 +4,27 @@
 {% set h = 1 %}
 {% endif %}
 
+{% import 'macros.html' as macros %}
+
 <div class="page-header"><h{{h}}>Design Goal Sequence</h{{h}}></div>
+
+<h{{h+1}}>Manual Design</h{{h+1}}>
+
 <p>Simple example</p><br />
 <p>Sequences from internal libray, GenBank, parts registry,</p><br />
 <p>Consider selection, e.g. for plasmid. Selection of assembled sequence is easier using for example insertion into a plasmid carrying an antiobiotic resistance marker. If uncut plasmid is an issue.</p><br />
 <p>List of reseoucres</p><br />
+
+<h{{h+1}}>Gibthon Construct Designer</h{{h+1}}>
+
+<p><a href="http://www.gibthon.org">Gibthon Construct Designer</a> automates much of the process of designing constructs for Gibson Assembly. Firstly you will need to import the sequences you wish to design with. These may by imported from a GenBank (.gb, .gbk) file on your computer, the <a href="http://www.ncbi.nlm.nih.gov/genbank/">GenBank database itself</a>, or the <a href="http://partsregistry.org/Main_Page">Registry of Standard Biological Parts</a>. This will generate a library of parts for you to use.</p>
+
+{% call macros.screenshot( name='Gibthon0' ) %}
+<img src="./img/Gibthon0.png" alt="Library of parts in the Gibthon Construct Designer.">
+{% endcall %}
+
+<p>Once the relevant parts have been uploaded to Gibthon, you canuse a simple drag-and-drop editor to design your desired construct, and procede to automated design of primers.</p>
+
+{% call macros.screenshot( name='Gibthon1' ) %}
+<img src="./img/Gibthon1.png" alt="Example construct.">
+{% endcall %}
