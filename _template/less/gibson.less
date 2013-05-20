@@ -11,6 +11,46 @@ ul.flowchart>li.list-arrow {
 ul.flowchart>li>a {
 	-moz-border-radius: 15px !important;
 	border-radius: 15px !important;
+	text-align:center;
+}
+
+li.active .btn-flowchart {
+	background-image: none;
+    outline: 0;
+    .box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
+}
+
+.flowchart > li > a {
+	display:block;
+}
+
+
+
+div.span3 {
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+	background-color:lighten(@linkColor, 55%);
+
+}
+
+div.span3 > div {
+	padding-left:10px;
+}
+
+div.span9 {
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+	margin-left:0px;
+	background-color:@white;
+}
+
+.padded {
+	padding-left:20px;
+	padding-right:20px;
+}
+
+div.row {
+	overflow:hidden;
 }
 
 div.sidebar-nav {

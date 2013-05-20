@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div id="wrap">
-			<div class="navbar navbar-fixed-top">
+			<div class="navbar navbar-inverse navbar-fixed-top">
 				<div class="navbar-inner">
 					<div class="container">
 						<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".main-collapse">
@@ -44,7 +44,9 @@
 					{% block side_menu %}{% endblock %}
 					</div>
 					<div class="span9">
+					<div class="padded">
 					{% block content %}{% endblock %}
+					</div>
 					</div>
 				</div>
 			</div>
@@ -66,5 +68,6 @@
 				frame.contentWindow.print();
 			}
 		</script>
+		{% block js %}{% endblock %}
 	</body>
 </html>

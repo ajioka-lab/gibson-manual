@@ -3,22 +3,22 @@
 {% block side_menu %}
 <div style="margin: 20px 0 30px;" class="affix"><h1 style="margin-top:0px;">Workflow</h1></div>
 <div class="sidebar-nav">
-	<ul class="nav nav-tabs nav-stacked affix flowchart">
-		<li class="active"><a href="#design" data-toggle="tab">1. Design Goal Sequence</a></li>
+	<ul class="nav-list nav-stacked affix flowchart" style="list-style:none; margin-left:0;">
+		<li class="active"><a class="btn btn-flowchart" href="#design" data-toggle="tab">1. Design Goal Sequence</a></li>
 		<li class="list-arrow">&darr;</li>
-		<li><a href="#primers" data-toggle="tab">2. Primer Design</a></li>
+		<li><a class="btn btn-flowchart" href="#primers" data-toggle="tab">2. Primer Design</a></li>
 		<li class="list-arrow">&darr;</li>
-		<li><a href="#pcr" data-toggle="tab">3. PCR Amplification</a></li>
+		<li><a class="btn btn-flowchart" href="#pcr" data-toggle="tab">3. PCR Amplification</a></li>
 		<li class="list-arrow">&darr;</li>
-		<li><a href="#gel" data-toggle="tab">4. Gel Purification</a></li>
+		<li><a class="btn btn-flowchart" href="#gel" data-toggle="tab">4. Gel Purification</a></li>
 		<li class="list-arrow">&darr;</li>
-		<li><a href="#assembly" data-toggle="tab">5. Isothermal Assembly</a></li>
+		<li><a class="btn btn-flowchart" href="#assembly" data-toggle="tab">5. Isothermal Assembly</a></li>
 		<li class="list-arrow">&darr;</li>
-		<li><a href="#transformation" data-toggle="tab">6. Transformation</a></li>
+		<li><a class="btn btn-flowchart" href="#transformation" data-toggle="tab">6. Transformation</a></li>
 		<li class="list-arrow">&darr;</li>
-		<li><a href="#plasmid" data-toggle="tab">7. Plasmid Purification</a></li>
+		<li><a class="btn btn-flowchart" href="#plasmid" data-toggle="tab">7. Plasmid Purification</a></li>
 		<li class="list-arrow">&darr;</li>
-		<li><a href="#verification" data-toggle="tab">8. Sequence Verification</a></li>
+		<li><a class="btn btn-flowchart" href="#verification" data-toggle="tab">8. Sequence Verification</a></li>
 	</ul>
 </div>
 {% endblock %}
@@ -50,4 +50,16 @@
 	{% include 'workflow/verification.html' %}
 	</div>
 </div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+$('a[data-toggle="tab"]').on( 'show', function( e ) {
+	var current_height = $(e.target.hash).height();
+	var window_height = $(window).height();
+	//if ( current_height - window_height < -80 ) {
+		$(e.target.hash).height( window_height - 100 );
+	//}
+} );
+</script>
 {% endblock %}
