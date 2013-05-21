@@ -9,7 +9,7 @@ from subprocess import check_call
 from datetime import date
 
 # generate version number
-VERSION = '0.1'
+VERSION = '0.2'
 DATE_STRING = date.today().strftime('%Y%m%d')
 version_string = '%s-%s' % (VERSION, DATE_STRING)
 
