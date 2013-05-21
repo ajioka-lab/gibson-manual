@@ -9,7 +9,7 @@ from subprocess import check_call
 from datetime import date
 
 # generate version number
-VERSION = '0.2'
+VERSION = '0.22'
 DATE_STRING = date.today().strftime('%Y%m%d')
 version_string = '%s-%s' % (VERSION, DATE_STRING)
 
@@ -22,6 +22,7 @@ os.mkdir( 'css' )
 # copy in javascript and image resources
 shutil.copytree( os.path.join(os.path.dirname(__file__), '../_template/js/' ), os.path.join( os.path.dirname(__file__), 'js' ) )
 shutil.copytree( os.path.join(os.path.dirname(__file__), '../_template/img/' ), os.path.join( os.path.dirname(__file__), 'img' ) )
+shutil.copytree( os.path.join(os.path.dirname(__file__), '../_template/font/' ), os.path.join( os.path.dirname(__file__), 'font' ) )
 
 # generate CSS
 check_call( shlex.split('lessc -x --yui-compress ../_template/less/bootstrap.less css/bootstrap.min.css') )
