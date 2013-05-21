@@ -10,10 +10,22 @@
 
 <h{{h+1}}>Manual Design</h{{h+1}}>
 
-<p>Simple example</p><br />
-<p>Sequences from internal libray, GenBank, parts registry,</p><br />
-<p>Consider selection, e.g. for plasmid. Selection of assembled sequence is easier using for example insertion into a plasmid carrying an antiobiotic resistance marker. If uncut plasmid is an issue.</p><br />
-<p>List of reseoucres</p><br />
+<p>A typical workflow:</p>
+<ol>
+	<li>Create computer folder to contain sequence files.</li>
+	<li>Identify source DNA sequences from:<ul>
+		<li>personal or laboratory sequence library</li>
+		<li>public repository  (e.g. <a href="http://www.ncbi.nlm.nih.gov/genbank/">GenBank</a>, <a href="http://partsregistry.org/Main_Page">partsregistry</a>)</li>
+	</ul></li>
+	<li>Download sequences in GenBank format (.gb, .gbk)</li>
+	<li>Open DNA sequences in preferred nucleotide sequence editor e.g. <a href="http://biologylabs.utah.edu/jorgensen/wayned/ape/">ApE</a><ul>
+		<li>Using the GenBank format with a DNA sequence editor enables sequence annotations to be viewed and modified; this is particular useful for more complex designs.</li>
+	</ul></li>
+	<li>Create and name a new sequence file e.g. goalseq1.gb</li>
+	<li>Cut and paste substrate sequences from source sequence files to the goal sequence file to form the goal sequence. Make custom changes to the goal sequence (e.g. codon optimisation).<ul>
+		<li>It is useful for primer design and future reference to ensure that assembly junctions are easily identified e.g. using coloured annotation to distinguish substrate DNA sequences.</li>
+	</ul></li>
+</ol>
 
 <h{{h+1}}>Gibthon Construct Designer</h{{h+1}}>
 

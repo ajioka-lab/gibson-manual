@@ -7,17 +7,31 @@
 {% import 'macros.html' as macros %}
 
 <div class="page-header"><h{{ h }}>Design Primers</h{{ h }}></div>
+<p>40 bp of complementary sequence at the termini of substate DNA sequences is sufficient for the Gibson assembly reaction. This can be achieved by adding 20 bp from adjacent substrate sequences.</p>
+<p>Note: as little as 20 bp complementary sequence may be sufficient for assembly; this usually comes at a cost to efficiency</p>
 
-<p>40 bp of overlap is sufficient for the Gibson assembly reaction. 
-Thus is typically achieved using 20 bp for qeuence for the terminal sequences of</p>
-<h{{ h+1 }}>Manual Primer Design</h{{ h+1 }}>
-<h{{ h+3 }}>Stage 1</h{{ h+3 }}>
-<p>From the 5&prime; end of fragment B sequence, go in the 3&prime; direction about 20 bp. In the first instance, take 20 bp and then adjust to try and optimize the 3&prime; anchoring residues (preferably G or C) and check the Tm. Over 20 bp, the Tm is generally fine unless the sequence is heavily GC or AT rich. Remember that the Tm for the other PCR primer should be about the same. A primer design program such as <a href="http://frodo.wi.mit.edu/primer3">Primer3</a> or <a href="http://dnasoftware.com">visual OMPTM</a>, are helpful, if the exact position of the overlap is not constrained, for example, when a long sequence needs to be broken into two or more smaller sequences for efficient PCR.</p>
-<h{{ h+3 }}>Stage 2</h{{ h+3 }}>
-<p>From the 3&prime; end of fragment A, sequence, go in the 5&prime; direction about 20 bp.</p>
-<h{{ h+3 }}>Stage 3</h{{ h+3 }}>
-<p>Join these two sequences and check for single stranded DNA secondary structure using a program like Unafold or MFold (http://mfold.bioinfo.rpi.edu/). Inevitably there will be some stem-loop structures but what matters is that they are not stable (e.g. negative ΔG) and try to avoid strong structure at the 3&prime; end as this is where the primer must anneal for the PCR. The primer design may have to go through a few iterations in extending or shortening the sequence at either end to achieve a good theoretical primer. The complementary sequence may be a good starting point for the fragment A primer to generate the overlap with fragment B.</p>
-<p>NB: Check the reverse complement of the sequence from Step 3 as it will be a good starting point for the fragment A PCR primer that will generate an overlap with fragment B.</p>
+<h{{h+3}}>Example workflow:</h{{h+3}}>
+Example workflow:
+<ol>
+	<li>Take 60 bp around each junction between substrate sequences<ul>
+		<li>The target primer size will still be approximately 40 bp; starting with 60 bp facilitates optimization because potential secondary structures affecting a range of primers designs can be assessed simultaneously.{% call macros.screenshot( name="ape_primer" ) %}<img src="./img/primerdesign_ApE_1.png" alt="Primer design in APE">{% endcall %}</li>
+	</ul></li>
+	<li>Analyse the 60 bp sequences e.g. using IDT’s <a href="http://eu.idtdna.com/analyzer/Applications/OligoAnalyzer/">OligoAnalyzer</a></li>
+	<li>Optimize the primer sequences as per standard PCR (see guides for primer design for PCR for further tips). Note that it may be difficult and unnecessary to meet all desirable primer design criteria simultaneously.<ul>
+		<li>Parameters to consider optimising:<ol>
+			<li>Overlap length: Try to keep >15nt from each substrate sequence</li>
+			<li>Melting temperature: Aim to match primer pair Tm values within 4 &deg;C.</li>
+			<li>Secondary structure: Make sure any hairpins have low Tm (typically less that 40 &deg;C). Any hairpin with Tm over ~30 &deg;C, should be >5bp from 3&prime; end or primers.</li>
+			<li>Primer Dimers</li>
+		</ol></li>
+		<li>If any of the above parameters are unacceptable, then consider adjusting the following variables:<ol>
+			<li>Primer length</li>
+			<li>Primer position relative to junction</li>
+		</ol></li>
+	</ul></li>
+	<li>Order primers</li>
+</ol>
+
 <h{{ h+1 }}>Gibthon Primer Design</h{{ h+1 }}>
 
 <p>Having designed your construct in the <a href="http://www.gibthon.org">Gibthon Construct Designer</a>, you will be able to automatically generate and design primers.</p>
