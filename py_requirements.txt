@@ -1,0 +1,16 @@
+CairoSVG==1.0.6
+Jinja2==2.7.2
+MarkupSafe==0.19
+Pyphen==0.9.1
+WeasyPrint==0.21
+argparse==1.2.1
+cairocffi==0.5.3
+cffi==0.8.2
+cssselect==0.9.1
+html5lib==0.999
+lxml==3.3.3
+nodeenv==0.7.2
+pycparser==2.10
+six==1.6.1
+tinycss==0.3
+wsgiref==0.1.2
